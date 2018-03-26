@@ -43,6 +43,7 @@ const FloaterContainer = ({
       />
     );
   }
+  console.log('Return container');
   return (
     <div className="__tooltip__container" style={styles.container}>
       {output.close}

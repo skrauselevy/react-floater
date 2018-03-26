@@ -70,6 +70,7 @@ export default class Arrow extends React.Component {
       arrowStyles.left = 0;
     }
 
+    console.log('Return Arrow');
     return (
       <div
         className="__tooltip__arrow"

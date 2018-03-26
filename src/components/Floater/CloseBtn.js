@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 
 const CloseBtn = ({ handleClick, styles }) => {
   const { color, height, width, ...style } = styles;
-
+  console.log('return closeBtn');
   return (
     <button aria-label="close" style={style} onClick={handleClick}>
       <svg

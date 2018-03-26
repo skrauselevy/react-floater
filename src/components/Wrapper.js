@@ -48,7 +48,7 @@ export default class Wrapper extends React.Component {
     if (!element) {
       return null;
     }
-
+    console.log('return wrapper');
     return (
       <span
         ref={setWrapperRef}

@@ -203,6 +203,7 @@ export default class ReactFloater extends React.Component {
 
     /* istanbul ignore else */
     if (placement === 'center') {
+      console.log('Set State, Line 206');
       this.setState({ status: STATUS.IDLE });
     }
     else if (target && this.tooltipRef) {
@@ -234,7 +235,7 @@ export default class ReactFloater extends React.Component {
           this.popper = data;
 
           getPopper(data, 'tooltip');
-
+          console.log('Set State, Line 238');
           this.setState({
             currentPlacement: data.placement,
             status: STATUS.IDLE,
@@ -250,6 +251,7 @@ export default class ReactFloater extends React.Component {
           this.popper = data;
 
           if (data.placement !== this.state.currentPlacement) {
+            console.log('Set State, Line 254');
             this.setState({ currentPlacement: data.placement });
           }
         }
@@ -274,6 +276,7 @@ export default class ReactFloater extends React.Component {
         },
         onCreate: (data) => {
           this.wrapperPopper = data;
+          console.log('Set State, Line 279');
           this.setState({ statusWrapper: STATUS.IDLE });
 
           getPopper(data, 'wrapper');
@@ -289,6 +292,7 @@ export default class ReactFloater extends React.Component {
   }
 
   changeWrapperPosition({ target, wrapperOptions }) {
+    console.log('Set State, Line 295');
     this.setState({
       positionWrapper: wrapperOptions.position && !!target
     });
@@ -300,7 +304,7 @@ export default class ReactFloater extends React.Component {
     if (!is.undefined(forceStatus)) {
       status = forceStatus;
     }
-
+    console.log('Set State, Line 307');
     this.setState({ status });
   }
 
@@ -330,6 +334,7 @@ export default class ReactFloater extends React.Component {
       this.wrapperPopper.instance.update();
     }
 
+    console.log('Set State, Line 337');
     this.setState({
       status: this.state.status === STATUS.OPENING ? STATUS.OPEN : STATUS.IDLE
     }, () => {

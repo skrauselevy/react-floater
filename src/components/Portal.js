@@ -5,6 +5,7 @@ import { canUseDOM, isReact16 } from '../utils';
 
 export default class Portal extends React.Component {
   constructor(props) {
+    console.log('constructor');
     super(props);
 
     if (!canUseDOM) return;
@@ -38,6 +39,7 @@ export default class Portal extends React.Component {
   };
 
   componentDidMount() {
+    console.log('componentDidMount');
     if (!canUseDOM) return;
 
     if (!isReact16) {
@@ -46,6 +48,7 @@ export default class Portal extends React.Component {
   }
 
   componentDidUpdate(prevProps) {
+    console.log('componentDidUpdate');
     if (!canUseDOM) return;
 
     const { placement, status } = this.props;
@@ -59,6 +62,7 @@ export default class Portal extends React.Component {
   }
 
   componentWillUnmount() {
+    console.log('componentWillUnmount');
     if (!canUseDOM || !this.node) return;
 
     if (!isReact16) {
